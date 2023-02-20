@@ -304,10 +304,11 @@ func CheckResponse(r *http.Response) error {
 	errorResponse := &ErrorResponse{Response: r}
 
 	// Don't check content-lenght: a created response, for example, has no body
-	// if r.Header.Get("Content-Length") == "0" {
-	// 	errorResponse.Errors.Message = r.Status
-	// 	return errorResponse
-	// }
+	if r.Header.Get("Content-Length") == "0" && (r.StatusCode < 200 || r.StatusCode >= 300) {
+		errorResponse.Code = r.StatusCode
+		errorResponse.Err = errors.New(r.Status)
+		return errorResponse
+	}
 
 	if c := r.StatusCode; c >= 200 && c <= 299 {
 		return nil
