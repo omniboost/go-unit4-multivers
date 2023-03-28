@@ -15,7 +15,7 @@ import (
 	"text/template"
 
 	"github.com/hashicorp/go-multierror"
-	"github.com/omniboost/go-fortnox/utils"
+	"github.com/omniboost/go-unit4-multivers/utils"
 	"github.com/pkg/errors"
 )
 
