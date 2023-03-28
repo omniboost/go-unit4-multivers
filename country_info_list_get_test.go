@@ -6,10 +6,8 @@ import (
 	"testing"
 )
 
-func TestFinTransGet(t *testing.T) {
-	req := client.NewFinTransGetRequest()
-	req.PathParams().Year = 2022
-	req.PathParams().JournalID = "19"
+func TestCountryInfoListGet(t *testing.T) {
+	req := client.NewCountryInfoListGetRequest()
 	resp, err := req.Do()
 	if err != nil {
 		t.Error(err)

@@ -7,7 +7,7 @@ import (
 )
 
 func TestAdministrationGet(t *testing.T) {
-	req := client.NewFinTransGetRequest()
+	req := client.NewAdministrationGetRequest()
 	resp, err := req.Do()
 	if err != nil {
 		t.Error(err)

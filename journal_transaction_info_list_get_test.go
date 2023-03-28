@@ -8,8 +8,8 @@ import (
 
 func TestJournalTransactionInfoListGet(t *testing.T) {
 	req := client.NewJournalTransactionInfoListGetRequest()
-	req.PathParams().FiscalYear = 2020
-	req.PathParams().JournalID = "V"
+	req.PathParams().FiscalYear = 2022
+	req.PathParams().JournalID = "19"
 	resp, err := req.Do()
 	if err != nil {
 		t.Error(err)

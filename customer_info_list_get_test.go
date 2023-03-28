@@ -8,7 +8,8 @@ import (
 
 func TestCustomerInfoListGet(t *testing.T) {
 	req := client.NewCustomerInfoListGetRequest()
-	req.QueryParams().Filter.Set("Email eq 'info@melbicks.h-p.co.uk' or Name eq 'Inkoopcombinatie CO-OP'")
+	// req.QueryParams().Filter.Set("Email eq 'info@melbicks.h-p.co.uk' or Name eq 'Inkoopcombinatie CO-OP'")
+	req.QueryParams().Filter.Set("indexof(Name, 'Larissa') gt -1")
 	resp, err := req.Do()
 	if err != nil {
 		t.Error(err)
