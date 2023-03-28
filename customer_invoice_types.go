@@ -6,18 +6,18 @@ type CustomerInvoice struct {
 	Messages               []interface{}        `json:"messages,omitempty"`
 	AmountCreditSqueeze    float64              `json:"amountCreditSqueeze,omitempty"`
 	AmountCreditSqueezeCur float64              `json:"amountCreditSqueezeCur,omitempty"`
-	AmountRebate           float64              `json:"amountRebate"`
-	AmountRebateCur        float64              `json:"amountRebateCur"`
-	AmountTotal            float64              `json:"amountTotal"`
-	AmountTotalCur         float64              `json:"amountTotalCur"`
-	AutoCalculateVat       bool                 `json:"autoCalculateVat"`
-	BordereauxNumber       string               `json:"bordereauxNumber"`
-	CanChange              bool                 `json:"canChange"`
-	CannotChangeReason     string               `json:"cannotChangeReason"`
-	ContactPerson          string               `json:"contactPerson"`
-	ContactPersonID        string               `json:"contactPersonId"`
+	AmountRebate           float64              `json:"amountRebate,omitempty"`
+	AmountRebateCur        float64              `json:"amountRebateCur,omitempty"`
+	AmountTotal            float64              `json:"amountTotal,omitempty"`
+	AmountTotalCur         float64              `json:"amountTotalCur,omitempty"`
+	AutoCalculateVat       bool                 `json:"autoCalculateVat,omitempty"`
+	BordereauxNumber       string               `json:"bordereauxNumber,omitempty"`
+	CanChange              bool                 `json:"canChange,omitempty"`
+	CannotChangeReason     string               `json:"cannotChangeReason,omitempty"`
+	ContactPerson          string               `json:"contactPerson,omitempty"`
+	ContactPersonID        string               `json:"contactPersonId,omitempty"`
 	CurrencyID             string               `json:"currencyId,omitempty"`
-	CustomerID             string               `json:"customerId"`
+	CustomerID             string               `json:"customerId,omitempty"`
 	CustomerInvoiceLines   CustomerInvoiceLines `json:"customerInvoiceLines"`
 	DocumentLink           *struct {
 		Messages           []interface{} `json:"messages"`
@@ -36,65 +36,65 @@ type CustomerInvoice struct {
 	DocumentNumber        int         `json:"documentNumber,omitempty"`
 	DunForPayment         bool        `json:"dunForPayment,omitempty"`
 	ExchangeRate          float64     `json:"exchangeRate,omitempty"`
-	FiscalYear            int         `json:"fiscalYear"`
+	FiscalYear            int         `json:"fiscalYear,omitempty"`
 	InDirectDebitBatch    bool        `json:"inDirectDebitBatch,omitempty"`
-	InvoiceDate           string      `json:"invoiceDate"`
-	InvoiceExpirationDate string      `json:"invoiceExpirationDate"`
+	InvoiceDate           string      `json:"invoiceDate,omitempty"`
+	InvoiceExpirationDate string      `json:"invoiceExpirationDate,omitempty"`
 	InvoiceID             string      `json:"invoiceId,omitempty"`
-	InvoiceType           int         `json:"invoiceType"`
-	JournalID             string      `json:"journalId"`
+	InvoiceType           int         `json:"invoiceType,omitempty"`
+	JournalID             string      `json:"journalId,omitempty"`
 	JournalSection        string      `json:"journalSection,omitempty"`
 	JournalTransaction    int         `json:"journalTransaction,omitempty"`
 	KvcPaymentCondition   bool        `json:"kvcPaymentCondition,omitempty"`
 	MandateID             string      `json:"mandateId,omitempty"`
-	NumberOfReminders     int         `json:"numberOfReminders"`
-	OpeningBalance        bool        `json:"openingBalance"`
-	OrderID               string      `json:"orderId"`
+	NumberOfReminders     int         `json:"numberOfReminders,omitempty"`
+	OpeningBalance        bool        `json:"openingBalance,omitempty"`
+	OrderID               string      `json:"orderId,omitempty"`
 	PaymentConditionID    string      `json:"paymentConditionId,omitempty"`
 	PaymentID             string      `json:"paymentId,omitempty"`
-	PaymentReference      string      `json:"paymentReference"`
-	PeriodNumber          int         `json:"periodNumber"`
-	ProcessedBy           string      `json:"processedBy"`
-	ProcessedByID         string      `json:"processedById"`
-	RebateExpirationDate  string      `json:"rebateExpirationDate"`
-	RebatePercentage      float64     `json:"rebatePercentage"`
-	Reference             string      `json:"reference"`
-	SystemInvoice         bool        `json:"systemInvoice"`
-	TotalAmountVatExcl    float64     `json:"totalAmountVatExcl"`
-	TotalAmountVatExclCur float64     `json:"totalAmountVatExclCur"`
-	VatAdjusted           bool        `json:"vatAdjusted"`
-	VatAmount             float64     `json:"vatAmount"`
-	VatAmountCur          float64     `json:"vatAmountCur"`
-	VatOnInvoice          bool        `json:"vatOnInvoice"`
+	PaymentReference      string      `json:"paymentReference,omitempty"`
+	PeriodNumber          int         `json:"periodNumber,omitempty"`
+	ProcessedBy           string      `json:"processedBy,omitempty"`
+	ProcessedByID         string      `json:"processedById,omitempty"`
+	RebateExpirationDate  string      `json:"rebateExpirationDate,omitempty"`
+	RebatePercentage      float64     `json:"rebatePercentage,omitempty"`
+	Reference             string      `json:"reference,omitempty"`
+	SystemInvoice         bool        `json:"systemInvoice,omitempty"`
+	TotalAmountVatExcl    float64     `json:"totalAmountVatExcl,omitempty"`
+	TotalAmountVatExclCur float64     `json:"totalAmountVatExclCur,omitempty"`
+	VatAdjusted           bool        `json:"vatAdjusted,omitempty"`
+	VatAmount             float64     `json:"vatAmount,omitempty"`
+	VatAmountCur          float64     `json:"vatAmountCur,omitempty"`
+	VatOnInvoice          bool        `json:"vatOnInvoice,omitempty"`
 	VatScenarioID         int         `json:"vatScenarioId,omitempty"`
-	VatTransactionLines   interface{} `json:"vatTransactionLines"`
+	VatTransactionLines   interface{} `json:"vatTransactionLines,omitempty"`
 }
 
 type CustomerInvoiceLines []CustomerInvoiceLine
 
 type CustomerInvoiceLine struct {
-	AccountID                 string      `json:"accountId"`
-	CostCentreID              string      `json:"costCentreId"`
-	CostUnitID                string      `json:"costUnitId"`
-	CreditAmount              float64     `json:"creditAmount"`
-	CreditAmountCur           float64     `json:"creditAmountCur"`
-	CurrencyID                string      `json:"currencyId"`
-	CustomerID                string      `json:"customerId"`
-	DebitAmount               float64     `json:"debitAmount"`
-	DebitAmountCur            float64     `json:"debitAmountCur"`
-	Description               string      `json:"description"`
-	Document                  string      `json:"document"`
-	FiscalYear                int         `json:"fiscalYear"`
-	FixedAssetID              string      `json:"fixedAssetId"`
-	JournalID                 string      `json:"journalId"`
-	JournalTransaction        int         `json:"journalTransaction"`
-	OpeningBalanceTransaction bool        `json:"openingBalanceTransaction"`
-	PeriodNumber              int         `json:"periodNumber"`
+	AccountID                 string      `json:"accountId,omitempty"`
+	CostCentreID              string      `json:"costCentreId,omitempty"`
+	CostUnitID                string      `json:"costUnitId,omitempty"`
+	CreditAmount              float64     `json:"creditAmount,omitempty"`
+	CreditAmountCur           float64     `json:"creditAmountCur,omitempty"`
+	CurrencyID                string      `json:"currencyId,omitempty"`
+	CustomerID                string      `json:"customerId,omitempty"`
+	DebitAmount               float64     `json:"debitAmount,omitempty"`
+	DebitAmountCur            float64     `json:"debitAmountCur,omitempty"`
+	Description               string      `json:"description,omitempty"`
+	Document                  string      `json:"document,omitempty"`
+	FiscalYear                int         `json:"fiscalYear,omitempty"`
+	FixedAssetID              string      `json:"fixedAssetId,omitempty"`
+	JournalID                 string      `json:"journalId,omitempty"`
+	JournalTransaction        int         `json:"journalTransaction,omitempty"`
+	OpeningBalanceTransaction bool        `json:"openingBalanceTransaction,omitempty"`
+	PeriodNumber              int         `json:"periodNumber,omitempty"`
 	Quantity                  float64     `json:"quantity,omitempty"`
-	SupplierID                string      `json:"supplierId"`
-	TransactionDate           string      `json:"transactionDate"`
-	VatAdjusted               bool        `json:"vatAdjusted"`
-	VatAmount                 float64     `json:"vatAmount"`
+	SupplierID                string      `json:"supplierId,omitempty"`
+	TransactionDate           string      `json:"transactionDate,omitempty"`
+	VatAdjusted               bool        `json:"vatAdjusted,omitempty"`
+	VatAmount                 float64     `json:"vatAmount,omitempty"`
 	VatCodeID                 interface{} `json:"vatCodeId,omitempty"`
 	VatType                   int         `json:"vatType,omitempty"`
 }
